@@ -81,3 +81,23 @@
      ```
      ： 指定动画将如何完成一个周期
     4. `animation-delay: number` （单位可以是 s 或者 ms）, 2s 表示 动画再2s 后开始， -2s 表示动画马上开始， 但是会 跳过2s 中， 假如一段动画是4s ，则会立即从 2s 的阶段开始。
+    5. `animation-iteration-count: number | infinite` (表示动画播放几次 或 无限(infinite)次)
+    6. `animation-direction: normal | reverse | alternate | alternate-reverse | initial | inherit` （定义是否循环交替反向播放动画）
+        normal: 默认值。动画按正常播放。
+        reverse: 动画反向播放。
+        alternate: 动画在奇数次（1、3、5...）正向播放，在偶数次（2、4、6...）反向播放。
+        alternate-reverse: 动画在奇数次（1、3、5...）反向播放，在偶数次（2、4、6...）正向播放。
+     7. `animation-fill-mode: none | forwards | backwards | both | initial | inherit`
+    （这个相对比较难理解， 但是将上面的打字动画 animation 值变成 animation: typing 6s steps(22) 0.5s 1 reverse backwards, effect .5s step-end infinite alternate;）
+     这样你大概就能理解了
+     none 表示 在动画结束后，元素的表现将是 初始时的表现。 何为初始状态，你要理解 初始状态和 `0%` `20%` `100%` 帧的状态是不一样的。
+     forwards 表示 在动画结束后，元素的表现将是结束时的表现。也就是对应 `keyframe` 中的 `to` 或者 `100%` 帧。
+     backwards 表示 在动画结束后， 元素的表现将是开始时的表现。也就是对应 `keyframe` 中的 `from` 或者 `0%` 帧。
+     both 表示动画遵循 forwards 和 backwards 的规则。表示：动画开始之前是 `from` 或 `0%` 关键帧；动画完成之后是 `to` 或 `100%` 关键帧状态。
+     8. `animation-play-state: paused | running`  表示动画是否停止还是运动，可以类似于视频一样控制播放动画还是停止动画。
+        
+        
+        
+        
+        
+        
